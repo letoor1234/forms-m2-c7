@@ -77,10 +77,12 @@ input[type="checkbox"] {
   display: none;
 }
 
+/* Radio tipo ocurrencias del profe */
 input[type="radio"] + label {
+  cursor: pointer;
   position: relative;
   display: block;
-  padding: .1em .3em;
+  padding: 0.1em 0.3em;
 }
 
 input[type="radio"] + label::before {
@@ -90,11 +92,48 @@ input[type="radio"] + label::before {
   left: 0;
   right: 100%;
   bottom: 0;
-  transition: right .3s;
+  transition: right 0.3s;
   background-color: rgb(126, 110, 181);
   z-index: -10;
 }
 
 input[type="radio"]:checked + label::before {
   right: 0;
+}
+
+
+/* Checkbox tipo switch */
+input[type="checkbox"] + label {
+  cursor: pointer;
+  position: relative;
+  width: 3em;
+  height: 1.5em;
+  background-color: rgb(188, 188, 188);
+  display: block;
+  border-radius: 1.5em;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+input[type="checkbox"]:checked + label {
+  background-color: rgb(126, 110, 181);
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  width: 1.3em;
+  height: 1.3em;
+  top: 0.1em;
+  bottom: 0.1em;
+  left: 0.1em;
+  right: 1.6em;
+
+  border-radius: 100%;
+
+  transition: all 0.3s;
+  background-color: #fff;
+}
+
+input[type="checkbox"]:checked + label::before {
+  left: 1.6em;
+  right: 0.1em;
 }
