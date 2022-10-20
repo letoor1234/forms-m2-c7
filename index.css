@@ -7,14 +7,94 @@
 
 body {
   width: calc(100vw - (100vw - 100%));
-
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin: 1em auto;
+  width: 25em;
+  padding: 2em 3em;
+  border-radius: 32px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-input, select {
-    padding: .2em .5em;
+h1 {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+input,
+select,
+button[type="submit"] {
+  padding: 0.5em 0.8em;
+  margin-bottom: 0.8em;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+input:focus,
+select:focus {
+  box-shadow: 0 2px 5px rgb(64, 51, 110);
+}
+
+label {
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+
+button[type="submit"] {
+  cursor: pointer;
+  margin-top: 3em;
+  background-color: #fff;
+  transition: all 0.2s;
+}
+
+button[type="submit"]:hover {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+}
+
+button[type="submit"]:active {
+  background-color: rgb(179, 167, 226);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(90, 73, 154);
+}
+
+a:hover {
+  text-decoration: none;
+  color: rgb(126, 110, 181);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="radio"] + label {
+  position: relative;
+  display: block;
+  padding: .1em .3em;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  transition: right .3s;
+  background-color: rgb(126, 110, 181);
+  z-index: -10;
+}
+
+input[type="radio"]:checked + label::before {
+  right: 0;
 }
